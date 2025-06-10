@@ -1,0 +1,213 @@
+/* --- Estilos Generales y Reseteo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* --- Contenedor principal para centrar el contenido del login --- */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    height: 75vh; /* Ajustado para dejar espacio al footer */
+    min-height: 500px;
+}
+
+/* --- Lado Izquierdo: Logo y Slogan --- */
+.left-side {
+    flex-basis: 580px;
+    padding-right: 32px;
+}
+
+.facebook-logo {
+    font-size: 60px;
+    color: #1877f2;
+    margin: -20px 0; /* Ajuste para alinear con el formulario */
+}
+
+.slogan {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    margin-top: 10px;
+}
+
+/* --- Lado Derecho: Formulario --- */
+.right-side {
+    flex-basis: 396px;
+    text-align: center;
+}
+
+.login-form-container {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    width: 100%;
+}
+
+.login-form-container input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+}
+
+.login-form-container input:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-button {
+    width: 100%;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 0;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+.login-button:hover {
+    background-color: #166fe5;
+}
+
+.forgot-password {
+    color: #1877f2;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 20px;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-form-container hr {
+    border: none;
+    border-top: 1px solid #dadde1;
+    margin: 20px 0;
+}
+
+.create-account-button {
+    background-color: #42b72a;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 14px 16px;
+    cursor: pointer;
+}
+.create-account-button:hover {
+    background-color: #36a420;
+}
+
+.create-page-link {
+    margin-top: 28px;
+    font-size: 14px;
+}
+.create-page-link a {
+    color: #1c1e21;
+}
+.create-page-link a:hover {
+    text-decoration: underline;
+}
+
+/* --- Pie de Página (Footer) --- */
+.page-footer {
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+    font-size: 12px;
+    color: #737373;
+}
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-footer ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.page-footer li {
+    margin-right: 10px;
+    line-height: 1.6;
+}
+.page-footer a {
+    color: #737373;
+}
+.page-footer a:hover {
+    text-decoration: underline;
+}
+
+.plus-button {
+    display: inline-block;
+    border: 1px solid #ccd0d5;
+    background-color: #f5f6f7;
+    padding: 0 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-hr {
+    border: none;
+    border-top: 1px solid #dddfe2;
+    margin: 10px 0;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+.ad-choices-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    margin-left: 3px;
+    background-image: url('https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/Y-n-t_93fBl.png');
+    background-size: auto;
+    background-position: 0 -131px;
+    background-repeat: no-repeat;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+        height: auto;
+    }
+    .left-side {
+        padding-right: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .slogan {
+        font-size: 24px;
+    }
+    .right-side {
+        max-width: 396px;
+    }
+}
